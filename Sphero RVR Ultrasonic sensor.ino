@@ -50,7 +50,7 @@ void loop() {
  
   inches = microsecondsToInches(duration); //Sets inches to how far in inches the closest thing is in front of it is 
   if(inches < 9  ){  
-    //If an object is less than 22 inches then stop both motors 
+    //If an object is less than 9 inches then stop both motors 
 uint8_t redArray[] = {0xFF, 0x00, 0x00, 0xFF, 0x00, 0x00};
     rvr.setAllLeds(ledGroup, redArray, sizeof(redArray) / sizeof(redArray[0]));
 rvr.driveWithHeading(0, 0, 0); // stop any previous movement
@@ -60,7 +60,7 @@ rvr.driveWithHeading(0, 0, 0); // stop any previous movement
   delay(600); // wait for turn to complete
  
   }else{ 
-    //if an object is more than 22 inches then drive forward iwth 64 speed
+    //if an object is more than 9 inches then drive forward iwth 64 speed
     rvr.rawMotors(RawMotorModes::forward, 100, RawMotorModes::forward, 100) ;
  uint8_t greenArray[] = {0x00, 0xFF, 0x00, 0x00, 0xFF, 0x00}; 
     rvr.setAllLeds(ledGroup, greenArray, sizeof(greenArray) / sizeof(greenArray[0]));
